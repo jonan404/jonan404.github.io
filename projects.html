@@ -4,102 +4,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Selected Project by Jonan">
-    <title>Project | Jonan</title>
+    <title>Projects | Jonan Johnson</title>
+    <meta name="description"
+        content="Selected projects by Jonan Johnson — a verification-gated RAG system, an ML vs LLM churn benchmark, and a multi-agent mental wellness assistant.">
+    <link rel="canonical" href="https://jonan404.github.io/projects.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jonan404.github.io/projects.html">
+    <meta property="og:title" content="Projects | Jonan Johnson">
+    <meta property="og:description"
+        content="A verification-gated RAG system, an ML vs LLM churn benchmark, and a multi-agent mental wellness assistant.">
+    <meta property="og:image" content="https://jonan404.github.io/og.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://jonan404.github.io/og.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;700;900&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/editorial.css">
-    <script src="js/main.js" defer></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-wrapper">
 
-
-        <nav class="navbar">
-            <a href="index.html" class="nav-logo"><span>J</span><span>J</span></a>
+        <nav class="navbar" aria-label="Primary">
+            <a href="index.html" class="nav-logo" aria-label="Jonan Johnson — home"><span aria-hidden="true">J</span><span
+                    aria-hidden="true">J</span></a>
             <ul class="nav-links">
                 <li><a href="index.html">Index</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Project</a></li>
+                <li><a href="projects.html" aria-current="page">Projects</a></li>
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
 
-        <main>
+        <main id="main">
             <section class="page-section">
-                <h1 class="hero-name" style="font-size: 80px; text-align: left;">Project</h1>
+                <h1 class="page-title">Projects</h1>
 
-                <div class="projects-list" style="margin-top: 60px;">
-                    <!-- Project 01 -->
-                    <article
-                        style="border-top: 0.5px solid var(--hairline); padding: 40px 0; display: grid; grid-template-columns: 100px 1fr 200px; gap: 40px;">
-                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #888;">Project 01
-                        </div>
-                        <div>
-                            <h3 style="font-family: 'Fraunces', serif; font-size: 28px; margin-bottom: 20px;">Trust
-                                Before Text: A Verification-Gated RAG System</h3>
-                            <p style="font-size: 16px; color: #444; max-width: 600px;">
-                                Architected a query-aware Orchestrator for multi-step RAG, coordinating retrieval,
-                                evidence validation, and citation-constrained synthesis. Built a deterministic
-                                validation pipeline to detect redundancy and contradictions.
+                <div class="projects-list">
+
+                    <article class="project-item">
+                        <div class="project-index">Project 01</div>
+                        <div class="project-body">
+                            <h2 class="project-title">Trust Before Text: A Verification-Gated RAG System</h2>
+                            <p class="project-desc">
+                                A verification-first RAG system whose LLM-free gate decides to answer or abstain
+                                <em>before</em> any model call. Built on Qdrant hybrid retrieval with a DeBERTa NLI
+                                stage, and evaluated on two external benchmarks with preregistered tests — every number
+                                in the co-authored paper traces back to a result file.
                             </p>
+                            <ul class="metrics">
+                                <li><span class="metric-value">0 / 45</span><span class="metric-label">Injections that
+                                        changed the decision</span></li>
+                                <li><span class="metric-value">48 / 48</span><span class="metric-label">Planted-evidence
+                                        probes blocked</span></li>
+                                <li><span class="metric-value">2</span><span class="metric-label">External
+                                        benchmarks</span></li>
+                            </ul>
+                            <ul class="tech-tags">
+                                <li>Python</li>
+                                <li>Qdrant</li>
+                                <li>DeBERTa NLI</li>
+                                <li>Hybrid Retrieval</li>
+                            </ul>
                         </div>
-                        <div style="text-align: right;">
-                            <a href="#"
-                                style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">Ongoing
-                                →</a>
+                        <div class="project-meta">
+                            <a class="project-link"
+                                href="https://github.com/jonan19/Trust-Before-Text-A-Verifiable-Multi-Step-RAG-System-for-Question-Answering"
+                                target="_blank" rel="noopener">View Source →</a>
+                            <span class="project-status">Flagship · Ongoing</span>
                         </div>
                     </article>
 
-                    <!-- Project 02 -->
-                    <article
-                        style="border-top: 0.5px solid var(--hairline); padding: 40px 0; display: grid; grid-template-columns: 100px 1fr 200px; gap: 40px;">
-                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #888;">Project 02
-                        </div>
-                        <div>
-                            <h3 style="font-family: 'Fraunces', serif; font-size: 28px; margin-bottom: 20px;">
-                                Alpha: High-Performance RAG System</h3>
-                            <p style="font-size: 16px; color: #444; max-width: 600px;">
-                                Engineered using Groq Llama-3 and FAISS for sub-second responses. Features hybrid search
-                                (semantic + keyword) and a modular pipeline for both persistent and dynamic,
-                                session-based PDF indexing.
+                    <article class="project-item">
+                        <div class="project-index">Project 02</div>
+                        <div class="project-body">
+                            <h2 class="project-title">Customer Churn Prediction &amp; LLM Cost-Accuracy Benchmark</h2>
+                            <p class="project-desc">
+                                A churn classifier (Random Forest, XGBoost) on 7,000+ telecom accounts with leak-proof
+                                preprocessing and class-imbalance handling — then benchmarked head-to-head against
+                                zero-shot and few-shot LLM prompting on identical data. The comparison surfaced a
+                                numeric-anchoring bias in few-shot outputs and a hidden reasoning-token cost, and turned
+                                an AI-hype question into an evidence-based recommendation.
                             </p>
+                            <ul class="metrics">
+                                <li><span class="metric-value">84%</span><span class="metric-label">ROC-AUC</span></li>
+                                <li><span class="metric-value">79%</span><span class="metric-label">At-risk customers
+                                        caught</span></li>
+                                <li><span class="metric-value">1/1000th</span><span class="metric-label">Cost vs
+                                        LLM</span></li>
+                                <li><span class="metric-value">11×</span><span class="metric-label">Lower
+                                        latency</span></li>
+                            </ul>
+                            <ul class="tech-tags">
+                                <li>scikit-learn</li>
+                                <li>XGBoost</li>
+                                <li>Groq</li>
+                                <li>Pandas</li>
+                            </ul>
                         </div>
-                        <div style="text-align: right;">
-                            <a href="#"
-                                style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">View
-                                Source →</a>
+                        <div class="project-meta">
+                            <a class="project-link" href="https://github.com/jonan19/Customer_Churn_Prediction-ML-vs-LLM"
+                                target="_blank" rel="noopener">View Source →</a>
+                            <span class="project-status">Complete</span>
                         </div>
                     </article>
 
-                    <!-- Project 03 -->
-                    <article
-                        style="border-top: 0.5px solid var(--hairline); border-bottom: 0.5px solid var(--hairline); padding: 40px 0; display: grid; grid-template-columns: 100px 1fr 200px; gap: 40px;">
-                        <div style="font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #888;">Project 03
-                        </div>
-                        <div>
-                            <h3 style="font-family: 'Fraunces', serif; font-size: 28px; margin-bottom: 20px;">
-                                Soulace: Mental Wellness Agent Architecture</h3>
-                            <p style="font-size: 16px; color: #444; max-width: 600px;">
-                                Designed and deployed a multi-agent LLM architecture using CrewAI and LangChain,
-                                implementing emotion-aware routing and context-sensitive response generation for a
-                                mental wellness platform. Built an orchestration pipeline with modular prompt
-                                engineering and safety-aware controls to ensure responsible AI behavior.
+                    <article class="project-item">
+                        <div class="project-index">Project 03</div>
+                        <div class="project-body">
+                            <h2 class="project-title">Soulace: A Mental Wellness Assistant</h2>
+                            <p class="project-desc">
+                                A multi-agent LLM architecture (CrewAI + LangChain) with emotion-aware routing and
+                                context-sensitive response generation for a mental wellness platform. I built the agent
+                                orchestration layer — modular prompt and context engineering, memory management, and
+                                task-specific specialization — plus safety-aware conversational controls and response
+                                filtering to keep behaviour responsible in front of real users.
                             </p>
+                            <ul class="tech-tags">
+                                <li>CrewAI</li>
+                                <li>LangChain</li>
+                                <li>Multi-Agent</li>
+                                <li>Prompt Engineering</li>
+                            </ul>
                         </div>
-                        <div style="text-align: right;">
-                            <a href="#"
-                                style="font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase;">Ongoing
-                                →</a>
+                        <div class="project-meta">
+                            <span class="project-status">SIH 2025 · Private Repo</span>
                         </div>
                     </article>
+
                 </div>
             </section>
         </main>
 
+        <footer class="site-footer">
+            <span>Jonan Johnson — 2026</span>
+        </footer>
 
     </div>
-
 </body>
 
 </html>

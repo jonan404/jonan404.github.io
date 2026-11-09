@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#FAFAFA"/>
+  <text x="6" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="#121212">J</text>
+  <text x="30" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="none" stroke="#121212" stroke-width="1.5">J</text>
+</svg>
