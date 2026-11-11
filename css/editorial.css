@@ -11,11 +11,59 @@
     --muted: #666;
     --muted-soft: #888;
     --body-copy: #444;
+    --soft-text: #555;
+    --on-accent: #fff;
     --margin-size: 5vw;
+
+    --moon-display: inline-block;
+    --sun-display: none;
+
+    color-scheme: light;
 
     --font-display: 'Fraunces', Georgia, serif;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+
+/* Dark theme -----------------------------------------------------
+   Two selectors, same tokens: the media query follows the system
+   setting unless the visitor has explicitly chosen light, and the
+   data-theme attribute is the manual override set by the toggle.
+   ---------------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --bg-color: #0F0F10;
+        --text-color: #F0F0F0;
+        --accent-color: #6E9BFF;
+        --hairline: #2A2A2C;
+        --muted: #9A9A9E;
+        --muted-soft: #86868A;
+        --body-copy: #B6B6BA;
+        --soft-text: #A8A8AC;
+        --on-accent: #0F0F10;
+
+        --moon-display: none;
+        --sun-display: inline-block;
+
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #0F0F10;
+    --text-color: #F0F0F0;
+    --accent-color: #6E9BFF;
+    --hairline: #2A2A2C;
+    --muted: #9A9A9E;
+    --muted-soft: #86868A;
+    --body-copy: #B6B6BA;
+    --soft-text: #A8A8AC;
+    --on-accent: #0F0F10;
+
+    --moon-display: none;
+    --sun-display: inline-block;
+
+    color-scheme: dark;
 }
 
 * {
@@ -57,7 +105,7 @@ body::before {
     top: 0;
     z-index: 100;
     background: var(--text-color);
-    color: #fff;
+    color: var(--bg-color);
     padding: 12px 20px;
     font-family: var(--font-mono);
     font-size: 12px;
@@ -161,6 +209,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+    margin-left: auto;
 }
 
 .nav-links a {
@@ -197,6 +246,40 @@ main {
     background-color: var(--accent-color);
 }
 
+/* Theme toggle ------------------------------------------------- */
+.theme-toggle {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    background: none;
+    border: 0.5px solid var(--hairline);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--text-color);
+    color: var(--accent-color);
+}
+
+.theme-toggle svg {
+    width: 16px;
+    height: 16px;
+}
+
+.theme-toggle .icon-moon {
+    display: var(--moon-display);
+}
+
+.theme-toggle .icon-sun {
+    display: var(--sun-display);
+}
+
 a {
     transition: color 0.3s ease;
     position: relative;
@@ -223,7 +306,7 @@ a {
 
 .hero-name::selection {
     background: var(--accent-color);
-    color: #fff;
+    color: var(--on-accent);
 }
 
 .hero-positioning {
@@ -239,7 +322,7 @@ a {
     margin: 0 auto;
     font-size: 20px;
     font-weight: 300;
-    color: #555;
+    color: var(--soft-text);
 }
 
 .hero-actions {
@@ -277,7 +360,7 @@ a {
 .btn-primary:hover {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
-    color: #fff;
+    color: var(--on-accent);
 }
 
 /* Page headings ------------------------------------------------ */
@@ -538,7 +621,7 @@ a {
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #555;
+    color: var(--soft-text);
     margin: 10px 0 20px;
 }
 
@@ -650,6 +733,22 @@ a {
     max-width: 700px;
 }
 
+/* Scroll reveal ------------------------------------------------
+   .reveal is applied by JS only when motion is allowed, so content
+   is never hidden if JS fails, is blocked, or the visitor prefers
+   reduced motion.
+   ---------------------------------------------------------------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
 /* Error page --------------------------------------------------- */
 .error-page {
     text-align: center;
@@ -757,15 +856,28 @@ a {
         text-align: center;
     }
 
+    /* Logo and toggle share the first row; links wrap onto the second,
+       so the nav costs two rows on a phone rather than three. */
     .navbar {
-        justify-content: center;
-        gap: 14px;
+        justify-content: space-between;
+        gap: 12px;
         padding: 16px 0;
     }
 
+    .nav-logo {
+        order: 1;
+    }
+
+    .theme-toggle {
+        order: 2;
+    }
+
     .nav-links {
+        order: 3;
+        flex-basis: 100%;
         gap: 18px 22px;
         justify-content: center;
+        margin-left: 0;
     }
 
     .nav-links a {
@@ -853,6 +965,11 @@ a {
     .glitch::before,
     .glitch::after {
         display: none;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
     }
 
     *,

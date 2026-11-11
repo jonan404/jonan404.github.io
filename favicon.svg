@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#FAFAFA"/>
-  <text x="6" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="#121212">J</text>
-  <text x="30" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="none" stroke="#121212" stroke-width="1.5">J</text>
+  <style>
+    :root { --bg: #FAFAFA; --ink: #121212; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0F0F10; --ink: #F0F0F0; }
+    }
+  </style>
+  <rect width="64" height="64" fill="var(--bg)" />
+  <text x="6" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="var(--ink)">J</text>
+  <text x="30" y="46" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="bold" fill="none" stroke="var(--ink)" stroke-width="1.5">J</text>
 </svg>
