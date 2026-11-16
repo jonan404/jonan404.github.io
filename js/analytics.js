@@ -2,7 +2,7 @@
    Google Analytics 4
    ------------------------------------------------------------
    The measurement ID lives here and nowhere else. To change it,
-   edit the one line below — no page markup needs touching.
+   edit the one line below, no page markup needs touching.
    ============================================================ */
 
 (function () {
